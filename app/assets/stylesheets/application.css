@@ -13,3 +13,191 @@
  *= require_tree .
  *= require_self
  */
+ /*@import "reset.scss";*/
+
+  header {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ffca60;
+    height: 80px;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  .signin-link, {
+    color: white;
+  }
+
+  .signin-signup {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    padding: 0.75em;
+    line-height: 39px;
+    color: white;
+    height: 100px;
+    align-items: center;
+  }
+
+  /*.signup-link a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }*/
+
+  .header-button {
+    background-color: #ffca60 ;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+
+  .session-form-submit-button {
+    background-color: #ffca60 ;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 98%;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  body {
+    background-color: #fff9e6;
+    color: #477DCA;
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    line-height: 1.625;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  h4, h5, h6 {
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    color: #EF6236;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  h5 {
+    font-size: 0.8em;
+  }
+
+  h6 {
+    font-size: 0.6em;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .signup-link {
+    padding: 0px 18px;
+    background-color: #FEFEFE;
+    border: 2px solid #FEFEFE;
+    border-radius: 3px;
+    color: #F7BF4D;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .secondary-signin-link, .secondary-signup-link {
+    padding: 0px 18px;
+    background-color: #F7BF4D;
+    border: 2px solid #F7BF4D;
+    border-radius: 3px;
+    color: #FEFEFE;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  h2.signin-greeting-container {
+    font-size: 1.1em;
+    margin-bottom: 18px;
+    color: #EF6236;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0;
+    align-content: center;
+    align-items: center;
+    float: left;
+  }
+
+  .session-form-main-container {
+    text-align: center;
+    display: inline-block;
+  }
+
+  .session-form-main-container-blurb {
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 15px;
+    justify-content: flex-start;
+  }
+
+  .session-form {
+    text-align: center;
+  }
+
+  form {
+    align-content: flex-end;
+  }
+
+  .session-form-input {
+    display: block;
+    margin: 0 0 0.8125em 0;
+    padding: 1em;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid #DDD;
+    width: 95%;
+    height: 40px;
+    font-size: 18px;
+  }

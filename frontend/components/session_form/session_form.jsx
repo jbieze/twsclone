@@ -31,9 +31,17 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link className="signup-link" to="/signup">sign up</Link>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <Link className="signin-link" to="/login">sign in</Link>;
+    }
+  }
+
+  secondaryNavLink() {
+    if (this.props.formType === 'login') {
+      return <Link className="secondary-signup-link" to="/signup">sign up</Link>;
+    } else {
+      return <Link className="secondary-signin-link" to="/login">sign in</Link>;
     }
   }
 
@@ -49,13 +57,18 @@ class SessionForm extends React.Component {
     );
   }
 
-
-
   render() {
+
+    let buttonValue = "";
+    if (this.props.formType === 'login') {
+      buttonValue = "Sign In";
+    } else {
+      buttonValue = "Sign Up";
+    }
 
     const inputName = this.props.formType === 'signup' ?
       <div className="session-form-navlink-main">
-        {this.navLink()}
+        <Link id="signup-link-body" to="/signup">sign up</Link>
         <label>
           <input
             className="session-form-input"
@@ -71,24 +84,24 @@ class SessionForm extends React.Component {
        </div>;
 
     const greeting = this.props.formType === 'signup' ?
-      <div className="greeting-container">
-        <h1>Welcome to TWSClone!</h1>
+      <div className="signup-greeting-container">
+        <h2>You have found yourself at TWSClone.</h2>
       </div> :
-      <div className="greeting-container">
-        <h1>Welcome back to TWSClone!</h1>
+      <div className="signin-greeting-container">
+        <h2>You have inexplicably returned to TWSClone.</h2>
       </div>;
 
     return (
-      <div >
+      <div className="session-form">
+        <br />
+        <br />
         <div className="session-form-main-container" >
 
           {greeting}
           {this.renderErrors()}
-
-          <div className="session-form-navlink-main">
-            {this.navLink()}
-          </div>
-
+          <br className="pre-blurb-break"/>
+          <h4 className="session-form-main-container-blurb">What are you doing here? Did you get lost?</h4>
+          <br className="post-blurb-break" />
           <form onSubmit={this.handleSubmit}>
               {this.props.formType === 'signup' ?
               <div>
@@ -100,7 +113,7 @@ class SessionForm extends React.Component {
                     placeholder="Email"
                     onChange={this.update('email')}/>
                 </label>
-                <br /><br />
+
             </div>
             :
           <div></div>}
@@ -112,8 +125,6 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 onChange={this.update('username')}/>
             </label>
-            <br />
-            <br />
             <label>
               <input
                 className="session-form-input"
@@ -122,14 +133,14 @@ class SessionForm extends React.Component {
                 placeholder="Password"
                 onChange={this.update('password')}/>
             </label>
-            <br /><br />
-            <input className="session-form-submit-button" type="submit" value="Submit"/>
+            <input className="session-form-submit-button" type="submit" value={buttonValue}/>
           </form>
           <br /><br />
         </div>
       </div>
-    );
-  }
+      );
+    }
+
 }
 
 export default withRouter(SessionForm);

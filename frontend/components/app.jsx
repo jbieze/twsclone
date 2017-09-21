@@ -7,7 +7,7 @@ import { Route, HashRouter } from 'react-router-dom';
 const App = () => (
   <div>
     <header>
-      <h1>Bench BnB</h1>
+      <h1 id="app-h1">TWSClone</h1>
       <GreetingContainer />
     </header>
 

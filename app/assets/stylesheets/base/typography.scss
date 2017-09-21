@@ -1,0 +1,119 @@
+// // Unabashedly lifted from the TeaWithStrangers Github repo at tws-on-rails/app/assets/stylesheets/base/typography.scss
+//
+// // Gratuitously lifted from Bitters (bitters.bourbon.io)
+//
+// body {
+//   // @include font-feature-settings("kern","liga","frac","pnum");
+//   -webkit-font-smoothing: antialiased;
+//   background-color: white;
+//   color: #477DCA;
+//   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+//   font-size: 18px;
+//   line-height: 1.625;
+//
+//   strong {
+//     font-weight: 600;
+//   }
+// }
+//
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+//   line-height: 1.25;
+//   font-weight: 600;
+//   margin: 0;
+// }
+//
+// h4,
+// h5,
+// h6 {
+//   font-weight: 400;
+// }
+//
+// h1 {
+//   font-size: 2.5em;
+// }
+//
+// h2 {
+//   font-size: 1.5em;
+//   color: #EF6236;
+// }
+//
+// h3 {
+//   font-size: 1em;
+// }
+//
+// h4 {
+//   font-size: 1em;
+// }
+//
+// h5 {
+//   font-size: 0.8em;
+// }
+//
+// h6 {
+//   font-size: 0.6em;
+// }
+//
+// p {
+//   margin: 0 0 ((1.625 * 1em) / 2);
+//   &.last {
+//     margin-bottom: (18 * 1.5)px;
+//   }
+//
+//   &.small {
+//     font-size: (18 * 0.8)px;
+//   }
+// }
+//
+// a {
+//   // @include transition(all 0.1s linear);
+//   color: #EF6236;
+//   text-decoration: none;
+//
+//   &:hover {
+//     color: darken(#EF6236, 15);
+//   }
+//
+//   &:active, &:focus {
+//     color: darken(#EF6236, 15);
+//     outline: none;
+//   }
+// }
+//
+// hr {
+//   border-bottom: 1px solid #DDD;
+//   border-left: none;
+//   border-right: none;
+//   border-top: none;
+//   margin: (1.625 * 1em)/2 0;
+// }
+//
+// img,
+// picture {
+//   margin: 0;
+//   max-width: 100%;
+// }
+//
+// blockquote {
+//   border-left: 2px solid #DDD;
+//   color: lighten(#333, 15);
+//   margin: (1.625 * 1em) 0;
+//   padding-left: (1.625 * 1em) / 2;
+//   &.wide {
+//     padding-left: 18px * 2;
+//   }
+// }
+//
+// cite {
+//   color: lighten(#333, 25);
+//   font-style: italic;
+//
+//   &:before {
+//     content: "\2014 \00A0";
+//   }
+// }
