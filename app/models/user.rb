@@ -20,9 +20,8 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :events,
-    primary_key: :id,
-    foreign_key: :attendee_id,
-    class_name: :Event
+    through: :join,
+    source: :event
 
   has_many :hosted_events,
     primary_key: :id,
@@ -50,7 +49,6 @@ class User < ApplicationRecord
   end
 
   private
-
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
