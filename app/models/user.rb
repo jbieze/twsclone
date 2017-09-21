@@ -5,28 +5,32 @@
 #  id              :integer          not null, primary key
 #  username        :string           not null
 #  email           :string           not null
-#  img_url         :string           not null
+#  img_url         :string
 #  password_digest :string           not null
 #  session_token   :string           not null
+#  city_id         :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 class User < ApplicationRecord
-  validates :username, :email, :img_url, :password_digest, :session_token, presence: true
-  validates :username, :email, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6, allow_null: true}
+  validates :username, :email, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
 
   before_validation :ensure_session_token
 
-  has_many :events,
-    through: :join,
-    source: :event
+  # has_many :events
+    # primary_key: :id,
+    # foreign_key: : ,
+    # class_name: :Event
 
-  has_many :hosted_events,
-    primary_key: :id,
-    foreign_key: :host_id,
-    class_name: :Event
+  # has_many :hosted_events,
+    # primary_key: :id,
+    # foreign_key: :host_id,
+    # class_name: :Event
 
   def password=(password)
     @password = password
@@ -49,6 +53,7 @@ class User < ApplicationRecord
   end
 
   private
+
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end

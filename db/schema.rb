@@ -10,43 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920215329) do
+ActiveRecord::Schema.define(version: 20170921004016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cities", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "user_id", null: false
-    t.index ["name"], name: "index_cities_on_name"
-    t.index ["user_id"], name: "index_cities_on_user_id"
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.integer "city_id", null: false
-    t.integer "host_id", null: false
-    t.integer "attendee_id", null: false
-    t.string "location", null: false
-    t.index ["attendee_id"], name: "index_events_on_attendee_id"
-    t.index ["city_id"], name: "index_events_on_city_id"
-    t.index ["host_id"], name: "index_events_on_host_id"
-  end
-
-  create_table "joins", force: :cascade do |t|
-    t.integer "attendee_id", null: false
-    t.integer "event_id", null: false
-    t.index ["attendee_id"], name: "index_joins_on_attendee_id"
-    t.index ["event_id"], name: "index_joins_on_event_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
-    t.string "img_url", null: false
+    t.string "img_url"
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["username"], name: "index_users_on_username"
+    t.integer "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
 end
