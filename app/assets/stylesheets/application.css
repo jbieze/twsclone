@@ -178,7 +178,7 @@
     text-transform: uppercase;
   }
 
-  .signin-greeting-container {
+  .signin-greeting-container, .signup-greeting-container {
     font-size: 1.1em;
     margin-bottom: 18px;
     padding-bottom: 18px;
@@ -268,4 +268,27 @@
   #app-h1 {
     padding-left: .5em;
     float: left;
+  }
+
+  .session-form-navlink-home {
+    display: flex;
+    float: left;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8em;
+    letter-spacing: 1px;
+    padding: 0.75em;
+    line-height: 39px;
+    color: white;
+    height: 100px;
+  }
+
+  .greeting-thing {
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
   }

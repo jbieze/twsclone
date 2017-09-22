@@ -79,9 +79,11 @@ class SessionForm extends React.Component {
         </label>
       </div>
        :
-       <div className="session-form-navlink-main">
-         { this.navLink() }
-       </div>;
+       <div>
+         <div className="session-form-navlink-main">
+           { this.navLink() }
+         </div>
+      </div>;
 
     const greeting = this.props.formType === 'signup' ?
       <div className="signup-greeting-container">
