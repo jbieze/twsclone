@@ -8,7 +8,7 @@ const App = () => (
   <div>
     <header>
       <div className="container">
-        <h1 id="app-h1">TWSClone</h1>
+        <h1 id="app-h1">LOGO, probably</h1>
         <GreetingContainer />
       </div>
     </header>

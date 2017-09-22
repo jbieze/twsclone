@@ -91,6 +91,11 @@
     cursor: pointer;
   }
 
+  .session-form-submit-button:hover {
+    background-color: #c63b10;
+    border-color: #c63b10;
+  }
+
   body {
     background-color: #fff9e6;
     color: #477DCA;
@@ -153,6 +158,13 @@
     font-size: 0.9em;
     font-weight: 600;
     text-transform: uppercase;
+  }
+
+  .signup-link:hover {
+    cursor: pointer;
+    background-color: #ffca60;
+    border-color: white;
+    color: white;
   }
 
   .secondary-signin-link, .secondary-signup-link {
