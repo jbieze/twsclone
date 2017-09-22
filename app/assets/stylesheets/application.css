@@ -56,22 +56,41 @@
 
   .header-button {
     background-color: #ffca60 ;
-    border: none;
+    /*border: none;*/
     color: white;
-    padding: 15px 32px;
+    /*padding: 15px 32px;*/
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
-    font-size: 0.8em;
+    /*font-size: 0.8em;*/
     margin: 4px 2px;
     cursor: pointer;
     font-weight: 600;
+    height: 40px;
+    padding: 0px 18px;
+    margin-left: 25px;
+    border: 2px solid #ffca60;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: color .2s, background-color .2s, border-color .2s
   }
 
   .header-button:hover {
     cursor: pointer;
+    background-color: white;
+    color: #ffca60;
+    border-color: white;
+    transition: color .2s, background-color .2s, border-color .2s
   }
+
+  /*.signup-link:hover {
+    cursor: pointer;
+    background-color: #ffca60;
+    border-color: white;
+    color: white;
+    transition: background-color .2s, color .2s;
+  }*/
 
   .session-form-submit-button {
     background-color: #EF6236 ;
@@ -89,11 +108,39 @@
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
+    transition: background-color .2s, color .2s;
   }
 
   .session-form-submit-button:hover {
     background-color: #c63b10;
     border-color: #c63b10;
+    transition: background-color .2s, color .2s;
+  }
+
+  .demo-login {
+    background-color: #fff9e6 ;
+    border: 2px solid #EF6236;
+    border-radius: 10px;
+    color: EF6236;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 99%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+  }
+
+  .demo-login:hover {
+    background-color: #EF6236;
+    border-color: #EF6236;
+    color: white;
+    transition: background-color .2s, color .2s;
   }
 
   body {
@@ -158,6 +205,7 @@
     font-size: 0.9em;
     font-weight: 600;
     text-transform: uppercase;
+    transition: background-color .2s, color .2s;
   }
 
   .signup-link:hover {
@@ -165,6 +213,7 @@
     background-color: #ffca60;
     border-color: white;
     color: white;
+    transition: background-color .2s, color .2s;
   }
 
   .secondary-signin-link, .secondary-signup-link {

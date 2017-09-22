@@ -19,6 +19,10 @@ export const clearErrors = errors => ({
   errors
 });
 
+export const demoLogin = () => dispatch => (
+  ApiUtil.demoLogin().then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+);
+
 export const login = user => dispatch => (
   ApiUtil.login(user).then(user => (dispatch(receiveCurrentUser(user))), err => (dispatch(receiveErrors(err.responseJSON))))
 );

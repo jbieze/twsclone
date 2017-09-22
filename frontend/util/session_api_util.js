@@ -20,3 +20,13 @@ export const logout = () => (
     url: '/api/session'
   })
 );
+
+export const demoLogin = () => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/session',
+    data: {
+      user: { email: "terrybollea@wwe.com", username: "hulkster", password: "brooke4ever" }
+    }
+  })
+);
