@@ -9,7 +9,7 @@ class Api::CitiesController < ApplicationController
     if @city
       render "api/cities/show"
     else
-      render json: ["City does not exist"], status: 404
+      render json: [`#{@city}? I've never heard of it. Is that a real place?.`], status: 404
     end
   end
 

@@ -1,1 +1,1 @@
-json.extract! @city, :id, :name
+json.partial! "api/cities/city", city: @city

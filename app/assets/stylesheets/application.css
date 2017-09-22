@@ -67,6 +67,10 @@
     cursor: pointer;
   }
 
+  .header-button:hover {
+    cursor: pointer;
+  }
+
   .session-form-submit-button {
     background-color: #ffca60 ;
     border: none;
