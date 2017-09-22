@@ -7,8 +7,10 @@ import { Route, HashRouter } from 'react-router-dom';
 const App = () => (
   <div>
     <header>
-      <h1 id="app-h1">TWSClone</h1>
-      <GreetingContainer />
+      <div className="container">
+        <h1 id="app-h1">TWSClone</h1>
+        <GreetingContainer />
+      </div>
     </header>
 
     <Route path="/login" component={ SessionFormContainer } />

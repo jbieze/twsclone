@@ -33,6 +33,7 @@
 
   .signin-signup {
     display: flex;
+    float: right;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.8em;
@@ -62,9 +63,10 @@
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
-    font-size: 16px;
+    font-size: 0.8em;
     margin: 4px 2px;
     cursor: pointer;
+    font-weight: 600;
   }
 
   .header-button:hover {
@@ -72,8 +74,9 @@
   }
 
   .session-form-submit-button {
-    background-color: #ffca60 ;
-    border: none;
+    background-color: #EF6236 ;
+    border: 2px solid #EF6236;
+    border-radius: 10px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -82,7 +85,7 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    width: 98%;
+    width: 99%;
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
@@ -163,9 +166,10 @@
     text-transform: uppercase;
   }
 
-  h2.signin-greeting-container {
+  .signin-greeting-container {
     font-size: 1.1em;
     margin-bottom: 18px;
+    padding-bottom: 18px;
     color: #EF6236;
     line-height: 1.25;
     font-weight: 600;
@@ -178,17 +182,29 @@
   .session-form-main-container {
     text-align: center;
     display: inline-block;
+    width: 80%;
+    max-width: 680px;
   }
 
   .session-form-main-container-blurb {
     text-align: left;
-    display: inline-block;
-    padding-bottom: 15px;
+    /*display: inline-block;*/
+    margin-bottom: 18px;
+    padding-left: 2px;
     justify-content: flex-start;
+    text-align: -webkit-left;
+    /* align-items: flex-start; */
+    /* align-self: left; */
+    /* display: inline-block; */
+    /* display: flex; */
+    /* justify-content: left; */
+    margin-right: 30%;
   }
 
   .session-form {
     text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
   }
 
   form {
@@ -199,11 +215,45 @@
     display: block;
     margin: 0 0 0.8125em 0;
     padding: 1em;
+    padding-right: 0.5em;
     width: 100%;
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #DDD;
     width: 95%;
-    height: 40px;
+    /*height: 40px;*/
     font-size: 18px;
+  }
+
+  .errors {
+    color: red;
+    /*text-transform: uppercase;*/
+    font-size: 14px;
+    padding-top: 8px;
+  }
+
+  header {
+    padding: 0 1em;
+  }
+
+  .header-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  #app-h1 {
+    padding-left: .5em;
+    float: left;
   }

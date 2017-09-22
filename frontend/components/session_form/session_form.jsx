@@ -47,10 +47,10 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
-            {error}
+            {error}.
           </li>
         ))}
       </ul>
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
             value={this.state.email}
             placeholder="Email"
             onChange={this.update('email')}/>
-        </label><br /><br />
+        </label>
       </div>
        :
        <div className="session-form-navlink-main">
@@ -93,15 +93,11 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form">
-        <br />
-        <br />
         <div className="session-form-main-container" >
 
           {greeting}
-          {this.renderErrors()}
-          <br className="pre-blurb-break"/>
+          <br/>
           <h4 className="session-form-main-container-blurb">What are you doing here? Did you get lost?</h4>
-          <br className="post-blurb-break" />
           <form onSubmit={this.handleSubmit}>
               {this.props.formType === 'signup' ?
               <div>
@@ -134,8 +130,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}/>
             </label>
             <input className="session-form-submit-button" type="submit" value={buttonValue}/>
+            {this.renderErrors()}
           </form>
-          <br /><br />
         </div>
       </div>
       );
