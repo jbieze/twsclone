@@ -13,9 +13,11 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.setState({ errors: [] });
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+
   }
 
   update(field) {

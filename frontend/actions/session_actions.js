@@ -14,10 +14,10 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const clearErrors = errors => ({
-  type: CLEAR_ERRORS,
-  errors
-});
+// export const clearErrors = errors => ({
+//   type: CLEAR_ERRORS,
+//   errors: []
+// });
 
 export const demoLogin = () => dispatch => (
   ApiUtil.demoLogin().then(currentUser => dispatch(receiveCurrentUser(currentUser)))
