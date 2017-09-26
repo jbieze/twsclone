@@ -6,7 +6,7 @@ import lodash from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    city: state.cities,
+    city: state.cities[ownProps.match.params.id],
     currentUser: state.session.currentUser
   };
 };
