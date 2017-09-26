@@ -4,9 +4,9 @@ import { fetchCity } from '../../actions/city_actions';
 import { fetchUser, updateUser } from '../../actions/session_actions';
 import lodash from 'lodash';
 
-const mapStateToProps = (state, ownProps ) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    city: state.city,
+    city: state.cities,
     currentUser: state.session.currentUser
   };
 };

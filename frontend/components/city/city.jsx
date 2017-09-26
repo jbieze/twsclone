@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-
-console.log(this);
+import { withRouter } from 'react-router';
 
 class City extends Component {
+
   constructor(props) {
     super(props);
     this.updateCity = this.updateCity.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCity(this.props.params.cityId);
+    this.props.fetchCity(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.cityId !== nextProps.params.cityId) {
-      this.props.fetchCity(nextProps.params.cityId);
+    if (this.props.match.params.cityId !== nextProps.match.params.cityId) {
+      this.props.fetchCity(nextProps.match.params.cityId);
     }
   }
 
   routeIsCorrect() {
-    return parseInt(this.props.params.cityId) === this.props.city.id;
+    return parseInt(this.props.match.params.cityId) === this.props.city.id;
   }
 
   updateCity(e) {
@@ -29,11 +29,17 @@ class City extends Component {
   }
 
   render() {
+
+  console.log(this.props.city);
+  console.log(this.props.city.id);
+
     return (
       <div className="city-container">
         <h1 className="city-name">{this.props.city.name}</h1>
+        <h4 class-name="city-name-blurb">Let's get tea!</h4>
       </div>
     );
   }
 }
-export default City;
+
+export default withRouter(City);
