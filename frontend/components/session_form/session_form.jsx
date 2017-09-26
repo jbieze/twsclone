@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
-
   }
 
   update(field) {
@@ -66,14 +65,12 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     let buttonValue = "";
     if (this.props.formType === 'login') {
       buttonValue = "Sign In";
     } else {
       buttonValue = "Sign Up";
     }
-
     const inputName = this.props.formType === 'signup' ?
       <div className="session-form-navlink-main">
         <Link id="signup-link-body" to="/signup">sign up</Link>
@@ -149,7 +146,6 @@ class SessionForm extends React.Component {
       </div>
       );
     }
-
 }
 
 export default withRouter(SessionForm);

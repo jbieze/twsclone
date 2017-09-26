@@ -6,10 +6,11 @@
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  img_url    :string
 #
 
 class City < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :img_url, presence: true
 
   has_many :users,
     primary_key: :id,

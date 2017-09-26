@@ -14,6 +14,10 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
+
 export const demoLogin = () => dispatch => (
   ApiUtil.demoLogin().then(currentUser => dispatch(receiveCurrentUser(currentUser)))
 );
@@ -28,4 +32,12 @@ export const logout = () => dispatch => (
 
 export const signup = user => dispatch => (
   ApiUtil.signup(user).then(user => (dispatch(receiveCurrentUser(user))), err => (dispatch(receiveErrors(err.responseJSON))))
+);
+
+export const fetchUser = (id) => (dispatch) => (
+  ApiUtil.fetchUser(id).then(user => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responseJSON)))
+);
+
+export const updateUser = user => dispatch => (
+  ApiUtil.updateUser(user).then(user => dispatch(receiveCurrentUser(user)))
 );
