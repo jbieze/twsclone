@@ -29,14 +29,14 @@ class City extends Component {
   }
 
   render() {
-
-  console.log(this.props.city);
-  console.log(this.props.city.id);
-
     return (
       <div className="city-container">
-        <h1 className="city-name">{this.props.city.name}</h1>
-        <h4 class-name="city-name-blurb">Let's get tea!</h4>
+        <div className="city-top-chunk" style={{backgroundImage: `url(${this.props.city.img_url})`}}>
+          <div className="chunk-pic-div">
+            <h1 className="city-show-name">{this.props.city.name}</h1>
+            <h4 className="city-show-name-blurb">Let's get tea!</h4>
+          </div>
+        </div>
       </div>
     );
   }
