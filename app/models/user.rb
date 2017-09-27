@@ -32,6 +32,12 @@ class User < ApplicationRecord
     # foreign_key: :host_id,
     # class_name: :Event
 
+  belongs_to :city,
+    primary_key: :id,
+    foreign_key: :city_id,
+    class_name: :City,
+    optional: :true
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

@@ -12,15 +12,15 @@ const sessionLinks = () => (
   </div>
 );
 
-const personalGreeting = (currentUser, logout) => (
+const loggedInSessionLinks = (currentUser, logout) => (
 	<hgroup className="header-group">
-    <h2>Hello, {currentUser.username}.</h2>
+    <Link className="logged-in-cities-link" to="/cities">cities</Link>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );
 
 const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  currentUser ? loggedInSessionLinks(currentUser, logout) : sessionLinks()
 );
 
 export default Greeting;

@@ -13,11 +13,6 @@ export const receiveUsers = users => ({
   users
 });
 
-export const setCity = (userId, user) => dispatch => (
-  UserApiUtil.setCity(userId, user).then(user => (
-    dispatch(receiveUser(user))
-  ))
-);
 
 export const fetchAllUsers = () => dispatch => (
   UserApiUtil.fetchAllusers().then(users => (
@@ -28,4 +23,10 @@ export const fetchAllUsers = () => dispatch => (
 export const fetchUser = id => dispatch => (
   UserApiUtil.fetchUser(id)
   .then(user => dispatch(receiveUser(user)))
+);
+
+export const setCity = (userId, user) => dispatch => (
+  UserApiUtil.setCity(userId, user).then(user => (
+    dispatch(receiveUser(user))
+  ))
 );

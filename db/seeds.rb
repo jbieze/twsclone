@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    demo_user = User.create(email: "terrybollea@wwe.com", username: "hulkster", password: "brooke4ever")
+    demo_user = User.create(email: "terrybollea@wwe.com", username: "hulkster", password: "brooke4ever", city_id: 1)
 
     c1 = City.create!(name: "SF Bay Area", img_url: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F24744804%2F99100008917%2F1%2Foriginal.jpg?w=1000&rect=0%2C0%2C2160%2C1080&s=b25c7b2deb9cdc3fbb52efcbc7977671")
     c2 = City.create!(name: "New York City", img_url: "https://www.wigdorlaw.com/wp-content/uploads/2017/05/5.12.17-SuingNYCCOMPRESSED.jpg")

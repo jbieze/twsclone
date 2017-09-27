@@ -5,7 +5,8 @@ class City extends Component {
 
   constructor(props) {
     super(props);
-    this.updateCity = this.updateCity.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.setCity = this.setCity.bind(this);
   }
 
   componentDidMount() {
@@ -18,14 +19,24 @@ class City extends Component {
     }
   }
 
-  routeIsCorrect() {
-    return parseInt(this.props.match.params.cityId) === this.props.city.id;
+  handleClick(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.props.currentUser);
+    user.city_id = this.props.city.id;
+    this.props.setCity(this.props.currentUser.id, user);
   }
 
-  updateCity(e) {
-    e.preventDefault();
-    this.setState({["city_id"]: this.props.city.id});
-    this.props.updateUser({ id: this.props.currentUser.id, city_id: this.props.city.id } );
+  setCity() {
+    if (this.props.currentUser) {
+      if (this.props.currentUser.city_id === this.props.city.id) {
+        return (
+          <p className="already-set">This is your home city!</p>
+        );
+      }
+      return (
+        <a className="set-home-button" href="#" onClick={this.handleClick}>Set as home city</a>
+      );
+    }
   }
 
   render() {
@@ -36,6 +47,13 @@ class City extends Component {
             <h1 className="city-show-name">{this.props.city.name}</h1>
             <h4 className="city-show-name-blurb">Let's get tea!</h4>
           </div>
+        </div>
+        <div className="city-bottom-chunk">
+          <h1 className="bottom-big-blurb">Tea Time is a conversation between a few people who know nothing about each other.</h1>
+          <p className="bottom-little-blurb">You'll never leave without questions, new perspectives, and the reminder that we're far more the same than we are different.</p>
+        </div>
+        <div className="home-city-button-div">
+          {this.setCity()}
         </div>
       </div>
     );
