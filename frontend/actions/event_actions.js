@@ -5,12 +5,12 @@ export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const RECEIVE_EVENTS_ERRORS = "RECEIVE_EVENTS_ERRORS";
 export const CLEAR_EVENTS_ERRORS = 'CLEAR_EVENTS_ERRORS';
 
-export const receiveAllEvents = events => ({
+export const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
   events
 });
 
-export const receiveSingleEvent = event => ({
+export const receiveEvent = event => ({
   type: RECEIVE_EVENT,
   event
 });
@@ -24,12 +24,10 @@ export const clearErrors = () => ({
   type: CLEAR_EVENTS_ERRORS
 });
 
-export const fetchEvents = () => dispatch => (
-  ApiUtil.fetchEvents().then(events => (
-      dispatch(receiveAllEvents(events))
-  ))
+export const fetchEvents = (cityId) => dispatch => (
+  ApiUtil.fetchEvents(cityId).then(events => (dispatch(receiveEvents(events))))
 );
 
 export const fetchEvent = (eventId) => dispatch => (
-  ApiUtil.fetchEvent(eventId).then(event => dispatch(receiveSingleEvent(event)))
+  ApiUtil.fetchEvent(eventId).then(event => dispatch(receiveEvent(event)))
 );

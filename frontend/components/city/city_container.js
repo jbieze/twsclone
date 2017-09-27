@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCities: () => dispatch(fetchCities()),
-  fetchCity: id => dispatch(fetchCity(id)),
+  fetchCity: cityId => dispatch(fetchCity(cityId)),
   fetchUser: user => dispatch(fetchUser(user)),
   setCity: (cityId, user) => dispatch(setCity(cityId, user)),
   fetchEvents: () => dispatch(fetchEvents()),

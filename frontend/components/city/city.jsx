@@ -12,9 +12,8 @@ class City extends Component {
   }
 
   componentWillMount() {
-    // this.props.fetchCities();
-    this.props.fetchEvents();
     this.props.fetchCity(this.props.match.params.id);
+    this.props.fetchEvents(this.props.match.params.id);
   }
 
   componentDidMount() {
