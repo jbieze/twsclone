@@ -10,7 +10,7 @@ const App = () => (
   <div>
     <header>
       <div className="container">
-        <Link className="session-form-navlink-home" to="/">TWSClone</Link>
+        <Link className="session-form-navlink-home" to="/" ><img className="logo-img" src="https://dcu7hky3kqbj1.cloudfront.net/assets/landing/logo-navbar-73cdae81cdb2f3eeccbb6e72b6a513344264952015da959fbb1a3c81216a5dcb.png"></img></Link>
         <GreetingContainer />
       </div>
     </header>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import CityEventContainer from './city_event_container';
 
 class City extends Component {
 
@@ -7,6 +8,13 @@ class City extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.setCity = this.setCity.bind(this);
+    this.renderEvents = this.renderEvents.bind(this);
+  }
+
+  componentWillMount() {
+    // this.props.fetchCities();
+    this.props.fetchEvents();
+    this.props.fetchCity(this.props.match.params.id);
   }
 
   componentDidMount() {
@@ -39,6 +47,14 @@ class City extends Component {
     }
   }
 
+  renderEvents () {
+    let { events } = this.props;
+    events = events.filter(event => event.city_id === this.props.currentCityId);
+    return events.map(event => (
+      <CityEventItemContainer key={event.id} event={event}/>
+    ));
+  }
+
   render() {
     return (
       <div className="city-container">
@@ -55,6 +71,14 @@ class City extends Component {
         <div className="home-city-button-div">
           {this.setCity()}
         </div>
+        <section className="city-events">
+          <div  className='city-events-div'>
+            <h2 className='city-events-blurb'>Events in {this.props.city.name}</h2>
+              <div className="event">
+                {this.renderEvents()}
+              </div>
+          </div>
+        </section>
       </div>
     );
   }
