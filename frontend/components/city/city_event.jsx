@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter} from 'react-router';
 
 class CityEvent extends React.Component {
   constructor(props) {
@@ -34,4 +35,4 @@ class CityEvent extends React.Component {
 }
 
 
-export default CityEvent;
+export default withRouter(CityEvent);

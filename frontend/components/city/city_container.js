@@ -5,6 +5,7 @@ import { fetchUser, updateUser } from '../../actions/session_actions';
 import { setCity } from '../../actions/user_actions';
 import { fetchEvents } from '../../actions/event_actions';
 import { selectEvents } from '../../reducers/selectors';
+import { withRouter } from 'react-router';
 import lodash from 'lodash';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCity: cityId => dispatch(fetchCity(cityId)),
   fetchUser: user => dispatch(fetchUser(user)),
   setCity: (cityId, user) => dispatch(setCity(cityId, user)),
-  fetchEvents: () => dispatch(fetchEvents()),
+  fetchEvents: cityId => dispatch(fetchEvents(cityId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(City);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(City));

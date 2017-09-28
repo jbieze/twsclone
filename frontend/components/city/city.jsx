@@ -21,8 +21,8 @@ class City extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.cityId !== nextProps.match.params.cityId) {
-      this.props.fetchCity(nextProps.match.params.cityId);
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.fetchCity(nextProps.match.params.id);
     }
   }
 
