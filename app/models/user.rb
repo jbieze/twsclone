@@ -22,15 +22,19 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  # has_many :events
-    # primary_key: :id,
-    # foreign_key: : ,
-    # class_name: :Event
+  has_many :joins,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Join
 
-  # has_many :hosted_events,
-    # primary_key: :id,
-    # foreign_key: :host_id,
-    # class_name: :Event
+  has_many :joined_events,
+    through: :joins,
+    source: :event
+
+  has_many :hosted_events,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Event
 
   belongs_to :city,
     primary_key: :id,

@@ -10,9 +10,9 @@ const EventsReducer = (state = _nullEvents, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_EVENTS:
-      return merge({}, state, { events: action.events });
+      return merge({}, state, { entities: action.events });
     case RECEIVE_EVENT:
-      return merge({}, state, { [action.events.id]: action.event });
+      return merge({}, state, { [action.event.id]: action.event });
     case RECEIVE_EVENTS_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });

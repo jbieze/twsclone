@@ -14,19 +14,19 @@ class Api::JoinsController < ApplicationController
   def destroy
     @event = Event.find_by(id: params[:event_id])
     if @event
-      current_user.registered_events.delete(@event)
+      current_user.joined_events.delete(@event)
       render "api/events/show"
     else
-      render json: ["You can't join an imaginary event, weirdo."]
+      render json: ["You can't leave an imaginary event, weirdo."]
     end
   end
 
   def index
-    @registrations = Join.all
+    @joins = Join.all
   end
 
   private
-  def registration_params
+  def join_params
     params.require(:join).permit(:event_id, :user_id)
   end
 end

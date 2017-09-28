@@ -50,7 +50,7 @@ class City extends Component {
     let { events } = this.props;
     events = events.filter(event => event.city_id === this.props.currentCityId);
     return events.map(event => (
-      <CityEventItemContainer key={event.id} event={event}/>
+      <CityEventContainer key={event.id} event={event}/>
     ));
   }
 
