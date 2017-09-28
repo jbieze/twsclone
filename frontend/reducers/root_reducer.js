@@ -4,13 +4,15 @@ import errors from './errors_reducer';
 import cities from './cities_reducer';
 import events from './events_reducer';
 import joins from './joins_reducer';
+import users from './users_reducer';
 
 const RootReducer = combineReducers({
   session,
   errors,
   cities,
   events,
-  joins
+  joins,
+  users
 });
 
 export default RootReducer;

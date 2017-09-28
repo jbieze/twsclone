@@ -2,10 +2,9 @@ import { RECEIVE_USER, RECEIVE_ERRORS } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge, mapValues, pick } from 'lodash';
 
-const mergeBasics = (state, obj) => {
-  const keys = Object.keys(obj).filter(key => (typeof obj[key]) !== 'object');
-  const simpleObj = pick(obj, keys);
-  state[obj.id] = simpleObj;
+const _nullState = {
+  users: {},
+  errors: []
 };
 
 const UsersReducer = (state = {}, action) => {
@@ -17,7 +16,7 @@ const UsersReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_CURRENT_USER:
       if (action.user) {
-        mergeBasics(newState, action.user);
+        _nullState(newState, action.user);
         return newState;
       } else {
         return state;

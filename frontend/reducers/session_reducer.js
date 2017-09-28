@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/session_actions';
 import { RECEIVE_JOIN } from '../actions/join_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const _nullState = Object.freeze({
   currentUser: null
@@ -17,6 +18,8 @@ const SessionReducer = (state = _nullState, action) => {
       let newState = merge({}, state);
       newState.currentUser.current_events.push(action.joinedEvent);
       return newState;
+    case RECEIVE_USER:
+      return merge({}, state, { currentUser: action.user });
     default:
       return state;
   }
