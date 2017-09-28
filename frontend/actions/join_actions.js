@@ -2,21 +2,35 @@ import * as ApiUtil from '../util/join_api_util';
 
 export const RECEIVE_JOIN = "RECEIVE_JOIN";
 export const REMOVE_JOIN = "REMOVE_JOIN";
+export const RECEIVE_JOINS = "RECEIVE_JOINS";
 
-export const createJoin = join => dispatch => (
-  ApiUtil.createJoin(join).then(join => dispatch(receiveJoin(join)))
-);
-
-export const deleteJoin = (join) => dispatch => (
-  ApiUtil.deleteJoin(join).then(join => dispatch(removeJoin(join)))
-);
-
-const receiveJoin = join => ({
+export const receiveJoin = join => ({
   type: RECEIVE_JOIN,
   join
 });
 
-const removeJoin = join => ({
+export const removeJoin = id => ({
   type: REMOVE_JOIN,
-  join
+  id
 });
+
+export const receiveJoins = () => ({
+  type: RECEIVE_JOINS
+});
+
+export const createJoin = (newJoin) => dispatch => (
+  ApiUtil.createJoin(newJoin).then(join => dispatch(receiveJoin(join)))
+);
+
+export const deleteJoin = (id) => dispatch => (
+  ApiUtil.deleteJoin(id).then(join => dispatch(removeJoin(join)))
+);
+
+
+export const fetchJoins = () => dispatch => (
+  ApiUtil.fetchJoins().then(attendances => dispatch(receiveJoins(attendances)))
+);
+
+export const fetchJoin = (id) => dispatch => (
+  ApiUtil.fetchJoins(id).then(join => dispatch(receiveJoin(join)))
+);

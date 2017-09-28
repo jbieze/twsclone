@@ -1,5 +1,4 @@
-json.partial! 'api/events/event', event: @event
+json.extract! @event, :id, :host_id, :city_id, :title, :address, :seats, :host
 
-json.users do
-  json.array! @event.users, partial: 'api/users/user', as: :user
-end
+json.date @event.date.strftime("%A %b %d")
+json.time @event.time.strftime("%I:%M %p")
