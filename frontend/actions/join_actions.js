@@ -14,13 +14,13 @@ export const removeJoin = join => ({
 });
 
 export const fetchJoin = joinId => dispatch => (
-  RegistrationAPIUtil.fetchJoin(joinId).then(join => dispatch(receiveJoin(join)))
+  ApiUtil.fetchJoin(joinId).then(join => dispatch(receiveJoin(join)))
 );
 
 export const createJoin = join => (dispatch) => (
-  ApiUtil.createJoin(join).then((join) => dispatch(receiveJoin(join)), (errors) => dispatch(receiveErrors(errors)))
+  ApiUtil.createJoin(join).then((join) => dispatch(receiveJoin(join))
 );
 
-export const destroyRegistration = joinId => dispatch => (
-  ApiUtil.destroyRegistration(joinId).then(join => dispatch(removeJoin(join)))
+export const destroyJoin = joinId => dispatch => (
+  ApiUtil.destroyJoin(joinId).then(join => dispatch(removeJoin(join)))
 );

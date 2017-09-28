@@ -24,4 +24,10 @@ class Event < ApplicationRecord
     primary_key: :id,
     foreign_key: :city_id,
     class_name: :City
+
+  has_many :joins
+
+  has_many :attendees,
+    through: :joins,
+    source: :user
 end
