@@ -10,11 +10,11 @@ class CityEvent extends React.Component {
 
   joinEventButton() {
     return (
-      <button className="sign-button">Join Event</button>
+      <button className="join-button">Join Event</button>
     );
   }
 
-  render () {
+  render() {
     return (
       <div key={this.props.event.id} className="city-event-container">
         <div className="city-event-info">
@@ -33,6 +33,5 @@ class CityEvent extends React.Component {
     );
   }
 }
-
 
 export default withRouter(CityEvent);

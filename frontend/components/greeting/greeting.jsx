@@ -15,6 +15,7 @@ const sessionLinks = () => (
 const loggedInSessionLinks = (currentUser, logout) => (
 	<hgroup className="header-group">
     <Link className="logged-in-cities-link" to="/cities">cities</Link>
+    <Link className="dashboard-link" to="/dashboard">dashboard</Link>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );

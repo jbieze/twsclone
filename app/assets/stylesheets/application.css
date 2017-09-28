@@ -56,20 +56,16 @@
 
   .header-button {
     background-color: #ffca60 ;
-    /*border: none;*/
     color: white;
-    /*padding: 15px 32px;*/
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
-    /*font-size: 0.8em;*/
     margin: 4px 2px;
     cursor: pointer;
     font-weight: 600;
     height: 40px;
     padding: 0px 18px;
-    margin-left: 25px;
     border: 2px solid #ffca60;
     border-radius: 3px;
     font-size: 0.9em;
@@ -528,4 +524,150 @@
   .logo-img {
     max-width: 250px;
     width: 100%;
+  }
+
+  .dashboard-link {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.88em;
+    letter-spacing: 1px;
+    margin-left: 18px;
+  }
+
+  .banner-img {
+    height: 280px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-button {
+    background-color: #EF6236;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    padding: 0px 18px;
+    border: 2px solid #ffca60;
+    border-radius: 3px;
+    border-color: #EF6236;
+    font-size: 0.9em;
+    transition: color .2s, background-color .2s, border-color .2s;
+  }
+
+  .banner-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #EF6236;
+    border-color: #EF6236;
+    transition: color .2s, background-color .2s, border-color .2s
+  }
+
+  .banner-words {
+    display: inline-block;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+  }
+
+  .big-banner-blurb {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 5px #000;
+  }
+
+  .little-banner-blurb {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 5px #000;
+  }
+
+  .banner-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .big-unnecessary-blurb {
+    display: block;
+    text-align: center;
+  }
+
+  .little-unnecessary-blurb {
+    color: black;
+    display: block;
+    text-align: center;
+  }
+
+  .unnecessary-info {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+  }
+
+  .unnecessary-div {
+    max-width: 33%;
+    align-items: center;
+    margin-left: 25px;
+  }
+
+  .city-events-div {
+    align-content: center;
+    text-align: center;
+  }
+
+  .event {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .city-event-info {
+    background-color: white;
+    border: 1px solid lightgrey;
+  }
+
+  .join-button {
+    background-color: #ffca60 ;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 600;
+    height: 40px;
+    padding: 0px 18px;
+    border: 2px solid #ffca60;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: color .2s, background-color .2s, border-color .2s
+  }
+
+  .join-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #ffca60;
+    border-color: ffca60;
+    transition: color .2s, background-color .2s, border-color .2s
+  }
+
+  .event-address {
+    color: #929292;
+    font-weight: 400;
+    font-size: 0.8em;
+  }
+
+  .event-datetime {
+    color: #333;
+    font-size: 1.25em;
+    font-weight: 600;
   }
