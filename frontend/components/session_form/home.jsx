@@ -47,8 +47,7 @@ return (
       </div>
     </section>
   </div>
-  );
-};
+);
 
 
 export default connect(state => ({currentUser: Boolean(state.session.currentUser)}))(Home);
