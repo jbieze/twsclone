@@ -18,7 +18,7 @@ export const deleteJoin = id => (
 export const fetchJoins = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/joins'
+    url: `api/joins/${id}`
   });
 };
 
