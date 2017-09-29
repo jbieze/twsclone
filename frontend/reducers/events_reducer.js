@@ -1,4 +1,4 @@
-import { RECEIVE_EVENTS, RECEIVE_EVENT, RECEIVE_EVENTS_ERRORS, CLEAR_EVENTS_ERRORS } from '../actions/event_actions';
+import { RECEIVE_EVENTS, RECEIVE_EVENT, RECEIVE_EVENTS_ERRORS, CLEAR_EVENTS_ERRORS, REMOVE_EVENT } from '../actions/event_actions';
 import { merge } from 'lodash';
 
 const _nullEvents = {
@@ -18,6 +18,8 @@ const EventsReducer = (state = _nullEvents, action) => {
       return merge({}, state, { errors });
     case CLEAR_EVENTS_ERRORS:
       return { errors: [] };
+    case REMOVE_EVENT:
+      return { entities: {} };
     default:
       return state;
   }
