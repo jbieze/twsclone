@@ -19,3 +19,18 @@
 
     e1 = Event.create!(address: "123 Actual Place", city_id: 2, host_id: 2, date_time: "2017-10-28 17:30:00")
     e2 = Event.create!(address: "456 Real Road", city_id: 2, host_id: 1, date_time: "2017-10-07 13:45:00")
+
+    e3 = Event.create!(address: "789 Verifiable Street", city_id: 1, host_id: 2, date_time: "2017-10-28 17:30:00")
+    e4 = Event.create!(address: "1011 Existing Avenu", city_id: 1, host_id: 1, date_time: "2017-10-07 13:45:00")
+
+    e5 = Event.create!(address: "1213 Forreal Blvd", city_id: 3, host_id: 2, date_time: "2017-10-28 17:30:00")
+    e6 = Event.create!(address: "1415 Definitely Road", city_id: 3, host_id: 1, date_time: "2017-10-07 13:45:00")
+
+    e7 = Event.create!(address: "1617 Totally Court", city_id: 4, host_id: 2, date_time: "2017-10-28 17:30:00")
+    e8 = Event.create!(address: "1819 True Lane", city_id: 4, host_id: 1, date_time: "2017-10-07 13:45:00")
+
+    e9 = Event.create!(address: "2021 Accurate Road", city_id: 5, host_id: 2, date_time: "2017-10-28 17:30:00")
+    e10 = Event.create!(address: "2223 Undeniable Street", city_id: 5, host_id: 1, date_time: "2017-10-07 13:45:00")
+
+    e11 = Event.create!(address: "2425 Whatta Blvd", city_id: 6, host_id: 2, date_time: "2017-10-28 17:30:00")
+    e12 = Event.create!(address: "2627 Completely Lane", city_id: 6, host_id: 1, date_time: "2017-10-07 13:45:00")

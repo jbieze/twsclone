@@ -28,22 +28,27 @@ class CityEvent extends React.Component {
   }
 
   joinEventButton() {
-    let joinEventButton;
-    if (this.props.currentUser) {
-      if (this.props.joinedEvents.includes(event.id)) {
-        joinEventButton = <div className="join-leave-button">
-          <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
-        </div>;
-      } else {
-        joinEventButton = <div className="join-leave-button">
-          <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
-        </div>;
-      }
-    } else {
-      joinEventButton = <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
-    }
+    return (
+      <button className="join-button">Join Event</button>
+    );
   }
 
+  // joinEventButton() {
+  //   let joinEventButton;
+  //   if (this.props.currentUser) {
+  //     if (this.props.joinedEvents.includes(event.id)) {
+  //       joinEventButton = <div className="join-leave-button">
+  //         <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
+  //       </div>;
+  //     } else {
+  //       joinEventButton = <div className="join-leave-button">
+  //         <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
+  //       </div>;
+  //     }
+  //   } else {
+  //     joinEventButton = <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
+  //   }
+  // }
 
   joinEventButtion() {
   (this.props.currentUser) ?
