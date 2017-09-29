@@ -6,8 +6,6 @@
 
 TWSClone is the highly unoriginal working name of a clone of [Tea With Strangers](https://teawithstrangers.com), a social meetup app created by Ankit Shah. This project was build over the course of just under two weeks, though future improvements are planned.
 
-A Ruby on Rails backend connects a Postgres SQL database to the React/Redux frontend. Once users create and/or sign in to an account, they will be able to specify the area in which they live and join meetups located there, which are hosted by a user and attended by a handful of other users. Users will have access to a dashboard that will display any meetups that they are joined as attendees and any meetups that they have created and will host.
-
 ---
 
 ## Features
@@ -44,6 +42,8 @@ Each individual city includes several features.
 ---
 
 ## Technologies
+
+A Ruby on Rails backend connects a Postgres SQL database to the React/Redux frontend. Once users create and/or sign in to an account, they will be able to specify the area in which they live and join meetups located there, which are hosted by a user and attended by a handful of other users. Users will have access to a dashboard that will display any meetups that they are joined as attendees and any meetups that they have created and will host.
 
 ### Additional Resources
 
