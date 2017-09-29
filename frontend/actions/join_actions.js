@@ -26,7 +26,6 @@ export const deleteJoin = (id) => dispatch => (
   ApiUtil.deleteJoin(id).then(join => dispatch(removeJoin(join)))
 );
 
-
 export const fetchJoins = () => dispatch => (
   ApiUtil.fetchJoins().then(attendances => dispatch(receiveJoins(attendances)))
 );
