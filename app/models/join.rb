@@ -10,6 +10,8 @@
 #
 
 class Join < ApplicationRecord
+  validates :user, :event, presence: true
+  
   belongs_to :user,
     foreign_key: :user_id,
     primary_key: :id,
