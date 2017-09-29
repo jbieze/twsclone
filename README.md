@@ -26,6 +26,8 @@ A Ruby on Rails backend connects a Postgres SQL database to the React/Redux fron
 
 Mirroring the webapp upon which it is based, TWSClone is available in select cities.
 
+![Cities](app/assets/images/cities.png)
+
 Users can choose from one of six major cities, where they can join or create meetups with other users in the same region.
 
 ### View City
