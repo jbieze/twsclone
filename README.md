@@ -30,11 +30,16 @@ Users can choose from one of six major cities, where they can join or create mee
 
 ### View City
 
-Each individual city includes several features
+Each individual city includes several features.
 
 ![City](app/assets/images/events.png)
 
-The city page allows users to set that city as the user's home, which well then let the user join events in that city. The page will notify the user if the city they are viewing is their home city, and prompt them to set the city as their home city if it is not. A user may view events in city that is not set as their home, but instead of a Join button there will be a notification that they must set that city as their home city in order to join that city's events.
+* The city page allows users to set that city as the user's home city.
+* A user setting a city as their home city will let that user join events in that city.
+* The page will notify the user if the city they are viewing is their home city, and prompt them to set the city as their home city if it is not.
+* A user may view events in any city that is not set as their home.
+* When a user is viewing the events in a city that is not their home city, instead of a Join button there will be a notification that they must set that city as their home city in order to join that city's events.
+* When a user is viewing the events in a city but is not logged in, instead of a Join button there will be a notification that they must log in to join events.
 
 ---
 
