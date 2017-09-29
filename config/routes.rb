@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :joins, only: [:create, :destroy, :show]
   end
 
+  get 'events/user_events', :to => 'events#user_events'
+
   root "static_pages#root"
 end

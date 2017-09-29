@@ -1,12 +1,10 @@
-export const createJoin = join => {
-  return (
+export const createJoin = join => (
   $.ajax({
     method: 'POST',
     url: 'api/joins',
     data: { join }
   })
 );
-};
 
 export const deleteJoin = id => (
   $.ajax({
@@ -15,16 +13,16 @@ export const deleteJoin = id => (
   })
 );
 
-export const fetchJoins = () => {
-  return $.ajax({
+export const fetchJoins = () => (
+  $.ajax({
     method: 'GET',
-    url: `api/joins/${id}`
-  });
-};
+    url: `api/joins/`
+  })
+);
 
-export const fetchJoin = (id) => {
-  return $.ajax({
+export const fetchJoin = id => (
+  $.ajax({
     method: 'GET',
     url: `api/joins/${id}`
-  });
-};
+  })
+);

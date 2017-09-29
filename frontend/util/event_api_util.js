@@ -1,22 +1,29 @@
-
 export const fetchEvents = cityId => (
   $.ajax({
     method: 'GET',
     url: `api/cities/${cityId}/events`
   })
 );
-export const fetchUserEvents = userId => (
+
+export const fetchEvent = id => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/events`
+    url: `api/events/${id}`
+  })
+);
+
+export const fetchUserEvents = cityId => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/events/user_events'
   })
 );
 
 export const createEvent = event => (
   $.ajax({
     method: 'POST',
-    url: `api/cities/${event.city_id}/events`,
-    data: {event: event}
+    url: 'api/events',
+    data: { event }
   })
 );
 
@@ -28,14 +35,7 @@ export const updateEvent = (event) => (
   })
 );
 
-export const fetchEvent = id => (
-  $.ajax({
-    method: 'GET',
-    url: `api/events/${id}`
-  })
-);
-
-export const destroyEvent = (id) => (
+export const removeEvent = id => (
   $.ajax({
     method: 'DELETE',
     url: `api/events/${id}`
