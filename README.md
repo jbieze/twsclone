@@ -34,7 +34,7 @@ Users can choose from one of six major cities, where they can join or create mee
 
 Each individual city includes several features.
 
-![City](app/assets/images/bettercity.png)
+![City](app/assets/images/morebettercity.png)
 
 * The city page allows users to set that city as the user's home city.
 * A user setting a city as their home city will let that user join events in that city.
