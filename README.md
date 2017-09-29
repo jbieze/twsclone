@@ -40,7 +40,12 @@ The city page allows users to set that city as the user's home, which well then 
 
 ## Technologies
 
+### Additional Resources
 
+* [Proposal wireframes](https://github.com/jbieze/twsclone/wiki/Wireframes)
+* [Schema](https://github.com/jbieze/twsclone/wiki/Schema)
+* [Component Hierarchy](https://github.com/jbieze/twsclone/wiki/Component-Hierarchy)
+* [Routes](https://github.com/jbieze/twsclone/wiki/Routes)
 
 ## Features to Implement
 
@@ -61,3 +66,7 @@ Users will be able to access a personal dashboard, which will have a several fea
 Users will be able to view all of the events that they have attended in the past, whether as attendee or host.
 
 Users will be able to adit their personal account information, including email address, password, and profile picture.
+
+### CSS (Re)Styling
+
+The styling of the webapp will be significantly revised as the project goes along; as it nears completion, a complete overhaul is anticipated.
