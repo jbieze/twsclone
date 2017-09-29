@@ -37,7 +37,12 @@ class City extends Component {
     if (this.props.currentUser) {
       if (this.props.currentUser.city_id === this.props.city.id) {
         return (
-          <p className="already-set">This is your home city!</p>
+          <p className="already-set">
+            <strong className="what-is-a-strong">This is your home city! </strong>
+              If you've moved,
+            <a className="back-to-cities" href="/#/cities"> change your home city here</a>
+            .
+            </p>
         );
       }
       return (

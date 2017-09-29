@@ -671,3 +671,24 @@
     font-size: 1.25em;
     font-weight: 600;
   }
+
+  .already-set {
+    color: #eda20b;
+    background-color: #f1e9c6;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .what-is-a-strong {
+    font-weight: 600;
+    color: #eda20b;
+  }
+
+  .back-to-cities {
+    color: #EF6236
+  }
+
+  .back-to-cities:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+  }
