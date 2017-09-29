@@ -27,9 +27,7 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Join
 
-  has_many :joined_events,
-    through: :joins,
-    source: :event
+  has_many :joined_events, through: :joins
 
   has_many :hosted_events,
     primary_key: :id,
