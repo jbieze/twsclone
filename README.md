@@ -4,7 +4,7 @@
 
 [TWSClone](https://twsclone.herokuapp.com/) is the the highly unoriginal working name of a clone of Tea With [Strangers](https://teawithstrangers.com), a social meetup app created by Ankit Shah. A Ruby on Rails backend connects a Postgres SQL database to the React/Redux frontend. Once users create and/or sign in to an account, they will be able to specify the area in which they live and join meetups located there, which are hosted by a user and attended by a handful of other users. Users will have access to a dashboard that will display any meetups that they are joined as attendees and any meetups that they have created and will host.
 
---
+---
 
 ## Features
 
@@ -12,17 +12,15 @@
 
 None of the features in TWSClone would function without the ability to create, sign in, and log out of a user account.
 
-![]()
+![Signup](app/assets/images/signup.png)
 
 This custom process is simple but secure, requiring a unique email address and a password with certain minimum requirements. Users are clearly informed of any issues with login/signup credentials. In addition, for the purposes of this project, a demo user is available for quick and functional access from both the Sign Up and Sign In pages.
-
----
 
 ### View Cities
 
 Mirroring the webapp upon which it is based, TWSClone is available in select cities.
 
-![]()
+![Cities](app/assets/images/cities.png)
 
 Users can choose from one of six major cities, where they can join or create meetups with other users in the same region.
 
@@ -30,23 +28,21 @@ Users can choose from one of six major cities, where they can join or create mee
 
 Each individual city allows the user to set it as the user's home city, giving that user the ability to join events in that city.
 
-![]()
+![City](app/assets/images/city.png)
 
 Users are informed when the city they are viewing is their home city.
 
-![]()
-
----
+![Home City](app/assets/images/homecity.png)
 
 ### View events
 
 The events in a given city are displayed when viewing that specific city's page.
 
-![]()
+![Events](app/assets/images/events.png)
 
 User has the option to join the events in their home city.
 
---
+---
 
 ## Features to Implement
 
