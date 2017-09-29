@@ -1,5 +1,5 @@
 import { RECEIVE_USER, RECEIVE_ERRORS } from '../actions/user_actions';
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS } from '../actions/session_actions';
 import { merge, mapValues, pick } from 'lodash';
 
 const _nullState = {
@@ -21,6 +21,8 @@ const UsersReducer = (state = {}, action) => {
       } else {
         return state;
       }
+    case RECEIVE_ERRORS:
+      return merge({}, state, { errors: action.errors });
     default:
       return state;
   }

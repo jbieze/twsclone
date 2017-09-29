@@ -5,3 +5,11 @@ export const setCity = (userId, user) => (
     data: { user: user }
   })
 );
+
+export const signup = user => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/users',
+    data: user
+  })
+);

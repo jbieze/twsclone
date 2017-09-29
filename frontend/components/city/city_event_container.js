@@ -6,7 +6,7 @@ import { createJoin, fetchJoin, removeJoin } from '../../actions/join_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-  // let joinedEvents = [];
+  let joinedEvents = [];
   // if (state.session.currentUser) {
   //   joinedEvents = state.session.currentUser.joined_events.map(event => event.id);
   // }

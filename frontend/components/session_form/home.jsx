@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter} from 'react-router';
 
 const Home = ({ currentUser }) => {
 
+  let bannerButton;
   if (currentUser) {
-    let bannerButton = <Link className="banner-link" tabIndex="-1" to='/cities'>
+    bannerButton = <Link className="banner-link" tabIndex="-1" to='/cities'>
       <button className='banner-button'>let's get tea</button>
     </Link>;
   } else {
-    let bannerButton = <Link className="banner-link" tabIndex="-1" to='/signup'>
+    bannerButton = <Link className="banner-link" tabIndex="-1" to='/signup'>
       <button className='banner-button'>let's get tea</button>
     </Link>;
   }
@@ -25,9 +27,7 @@ const Home = ({ currentUser }) => {
             <p className='little-banner-blurb'>But you don't discover that when you're staring at a screen.</p>
           </div>
           <nav>
-            <Link className="banner-link" tabIndex="-1" to='/signup'>
-              <button className='banner-button'>let's get tea</button>
-            </Link>
+            { bannerButton }
           </nav>
         </div>
       </div>
@@ -48,7 +48,6 @@ const Home = ({ currentUser }) => {
       </section>
     </div>
   );
-}
+};
 
-
-export default connect(state => ({currentUser: Boolean(state.session.currentUser)}))(Home);
+export default withRouter(connect(state => ({currentUser: Boolean(state.session.currentUser)}))(Home));

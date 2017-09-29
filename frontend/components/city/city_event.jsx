@@ -5,7 +5,26 @@ import { withRouter} from 'react-router';
 class CityEvent extends React.Component {
   constructor(props) {
     super(props);
-    this.joinEventButton = this.joinEventButton.bind(this);
+    // this.joinEventButton = this.joinEventButton.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchCities();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps !== this.props) {
+      this.setState({ joins: nextProps.joins });
+    }
+  }
+
+  handleJoin(id) {
+    const join = { event_id: id };
+    this.props.createJoin(join);
+  }
+
+  handleLeave(id) {
+    this.props.removeJoin(id);
   }
 
   joinEventButton() {

@@ -30,9 +30,9 @@ export const logout = () => dispatch => (
   ApiUtil.logout().then(user => (dispatch(receiveCurrentUser(null))))
 );
 
-export const signup = user => dispatch => (
-  ApiUtil.signup(user).then(user => (dispatch(receiveCurrentUser(user))), err => (dispatch(receiveErrors(err.responseJSON))))
-);
+// export const signup = user => dispatch => (
+//   ApiUtil.signup(user).then(user => (dispatch(receiveCurrentUser(user))), err => (dispatch(receiveErrors(err.responseJSON))))
+// );
 
 export const fetchUser = (id) => (dispatch) => (
   ApiUtil.fetchUser(id).then(user => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responseJSON)))
