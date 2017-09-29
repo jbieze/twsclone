@@ -47,7 +47,7 @@ Each individual city includes several features.
 
 ## Technologies
 
-Ruby was chosen as the backend language thanks to its approachability and ease of use, along with its compatibility with Rails. These allowed for the implementation of interassociated database tables, and Postgres SQL was selected to manage and query the database. Utilizing React and Redux for the frontend allows for the state to be separated into slices based on the features being used at the time. This allows the state as a whole to remain normalized, while only its individual parts are altered.
+Ruby was chosen as the backend language thanks to its approachability and ease of use, along with its compatibility with Rails. These allowed for the implementation of relational database tables, and Postgres SQL was selected to manage and query the database. Utilizing React and Redux for the frontend allows for the state to be separated into slices based on the features being used at the time. This allows the state as a whole to remain normalized, while only its individual parts are altered.
 
 ### Additional Resources
 
