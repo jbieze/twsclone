@@ -517,7 +517,8 @@
 
   .city-events-blurb {
     display: flex;
-    margin-top: 18px;
+    margin-top: 50px;
+    margin-bottom: 18px;
     justify-content: center;
   }
 

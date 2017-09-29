@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
       <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
-            {error}.
+            {` ${error} .`} <br />
           </li>
         ))}
       </ul>
@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
       <div className="session-form">
         <div className="session-form-main-container" >
 
-          {greeting}
+          { greeting }
           <br/>
           <h4 className="session-form-main-container-blurb">What are you doing here? Did you get lost?</h4>
           <form onSubmit={this.handleSubmit}>

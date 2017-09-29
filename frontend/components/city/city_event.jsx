@@ -34,6 +34,9 @@ class CityEvent extends React.Component {
   }
 
   render() {
+    const date = new Date(this.props.event.date_time);
+    console.log(this.props.event.date_time);
+    console.log(date);
     return (
       <div key={this.props.event.id} className="city-event-container">
         <div className="city-event-info">
