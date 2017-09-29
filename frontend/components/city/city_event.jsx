@@ -28,15 +28,38 @@ class CityEvent extends React.Component {
   }
 
   joinEventButton() {
-    return (
-      <button className="join-button">Join Event</button>
-    );
+    let joinEventButton;
+    if (this.props.currentUser) {
+      if (this.props.joinedEvents.includes(event.id)) {
+        joinEventButton = <div className="join-leave-button">
+          <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
+        </div>;
+      } else {
+        joinEventButton = <div className="join-leave-button">
+          <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
+        </div>;
+      }
+    } else {
+      joinEventButton = <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
+    }
+  }
+
+
+  joinEventButtion() {
+  (this.props.currentUser) ?
+    (this.props.joinedEvents.includes(event.id) ?
+      <div className="join-leave-button">
+        <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
+      </div> :
+
+      <div className="join-leave-button">
+        <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
+      </div> ) :
+      <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
   }
 
   render() {
     const date = new Date(this.props.event.date_time);
-    console.log(this.props.event.date_time);
-    console.log(date);
     return (
       <div key={this.props.event.id} className="city-event-container">
         <div className="city-event-info">
@@ -48,8 +71,9 @@ class CityEvent extends React.Component {
             <p className="event-address">{this.props.event.address}</p>
           </div>
         </div>
-        <div className="join-event-button">
-          {this.joinEventButton()}
+
+        <div className="join-leave-div">
+          { this.joinEventButton() }
         </div>
       </div>
     );

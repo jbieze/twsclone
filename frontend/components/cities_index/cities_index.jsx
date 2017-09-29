@@ -11,7 +11,6 @@ class CitiesIndex extends React.Component {
   render() {
     const cityList = this.props.cities.map(city => (
       <div key={city.id} className="city" style={{backgroundImage: `url(${city.img_url})`}}>
-        {console.log(city.img_url)}
         <div className="city-div">
           <Link className="city-name" to={`/cities/${city.id}`}>{city.name}</Link>
         </div>

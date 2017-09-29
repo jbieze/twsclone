@@ -6,6 +6,7 @@ import GreetingContainer from './greeting/greeting_container';
 import CitiesIndexContainer from './cities_index/cities_index_container';
 import CityContainer from './city/city_container';
 import Home from './session_form/home';
+// import HostEventContainer from './events/host_event_container';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
     <Route path="/signup" component={ SessionFormContainer } />
     <Route exact path="/cities" component={CitiesIndexContainer} />
     { <Route path="/cities/:id" component={CityContainer} /> }
+
     <Route exact path='/' component={Home} />
   </div>
 );
