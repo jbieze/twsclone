@@ -1,20 +1,24 @@
 # TWSClone
 
-![Home Page](app/assets/images/homepage.png)
+[Live Demo](https://twsclone.herokuapp.com/)
 
-[TWSClone](https://twsclone.herokuapp.com/) is the the highly unoriginal working name of a clone of Tea With [Strangers](https://teawithstrangers.com), a social meetup app created by Ankit Shah. A Ruby on Rails backend connects a Postgres SQL database to the React/Redux frontend. Once users create and/or sign in to an account, they will be able to specify the area in which they live and join meetups located there, which are hosted by a user and attended by a handful of other users. Users will have access to a dashboard that will display any meetups that they are joined as attendees and any meetups that they have created and will host.
+TWSClone is the highly unoriginal working name of a clone of [Tea With Strangers](https://teawithstrangers.com), a social meetup app created by Ankit Shah. This project was build over the course of just under two weeks, though future improvements are planned.
+
+A Ruby on Rails backend connects a Postgres SQL database to the React/Redux frontend. Once users create and/or sign in to an account, they will be able to specify the area in which they live and join meetups located there, which are hosted by a user and attended by a handful of other users. Users will have access to a dashboard that will display any meetups that they are joined as attendees and any meetups that they have created and will host.
 
 ---
 
 ## Features
 
-### Frontend-to-Backend Auth
+* Secure frontend to backend user authorization utilizing BCrypt
+* Index of cities where meetups are available
+* City page
+  * View city
+  * Set city as home
+  * View city events
+  * Join events in home city
 
-None of the features in TWSClone would function without the ability to create, sign in, and log out of a user account.
-
-![Signup](app/assets/images/signup.png)
-
-This custom process is simple but secure, requiring a unique email address and a password with certain minimum requirements. Users are clearly informed of any issues with login/signup credentials. In addition, for the purposes of this project, a demo user is available for quick and functional access from both the Sign Up and Sign In pages.
+---
 
 ### View Cities
 
@@ -26,23 +30,17 @@ Users can choose from one of six major cities, where they can join or create mee
 
 ### View City
 
-Each individual city allows the user to set it as the user's home city, giving that user the ability to join events in that city.
+Each individual city includes several features
 
-![City](app/assets/images/city.png)
+![City](app/assets/images/events.png)
 
-Users are informed when the city they are viewing is their home city.
-
-![Home City](app/assets/images/homecity.png)
-
-### View events
-
-The events in a given city are displayed when viewing that specific city's page.
-
-![Events](app/assets/images/events.png)
-
-User has the option to join the events in their home city.
+The city page allows users to set that city as the user's home, which well then let the user join events in that city. The page will notify the user if the city they are viewing is their home city, and prompt them to set the city as their home city if it is not. A user may view events in city that is not set as their home, but instead of a Join button there will be a notification that they must set that city as their home city in order to join that city's events.
 
 ---
+
+## Technologies
+
+
 
 ## Features to Implement
 
