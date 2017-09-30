@@ -62,11 +62,11 @@ class CityEvent extends React.Component {
 
     return (
       (this.props.city) ?
-      <div className="event-index-main-container">
-        <div className="event-nav-links">
+      <div className="event-div">
+        <div className="create-event">
           <Link to={`/cities/${city.id}/new-event-form`}>Create New Event</Link>
         </div>
-        <div className="event-index-container">
+        <div className="events-list">
           {eventList}
         </div>
       </div> : <div></div>
