@@ -27,60 +27,49 @@ class CityEvent extends React.Component {
     this.props.removeJoin(id);
   }
 
-  joinEventButton() {
-    return (
-      <button className="join-button">Join Event</button>
-    );
-  }
-
-  // joinEventButton() {
-  //   let joinEventButton;
-  //   if (this.props.currentUser) {
-  //     if (this.props.joinedEvents.includes(event.id)) {
-  //       joinEventButton = <div className="join-leave-button">
-  //         <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
-  //       </div>;
-  //     } else {
-  //       joinEventButton = <div className="join-leave-button">
-  //         <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
-  //       </div>;
-  //     }
-  //   } else {
-  //     joinEventButton = <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
-  //   }
-  // }
-
-  joinEventButtion() {
-  (this.props.currentUser) ?
-    (this.props.joinedEvents.includes(event.id) ?
-      <div className="join-leave-button">
-        <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
-      </div> :
-
-      <div className="join-leave-button">
-        <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
-      </div> ) :
-      <Link className="join-leave-button" to='/sign-up'>sign in to join</Link>;
-  }
-
   render() {
-    const date = new Date(this.props.event.date_time);
-    return (
-      <div key={this.props.event.id} className="city-event-container">
-        <div className="city-event-info">
-          <div className="event-detail">
-            <p className="event-location">{this.props.event.location}</p>
-            <p className="event-datetime">{this.props.event.date_time}</p>
+    const { city } = this.props;
+    const currentUser = this.props;
+    console.log(this.props.city);
+    const eventList = city.events.map(event => (
+      <ul key={event.id} className="event-index">
+        <div className="event-index-card">
+          <div className="event-index-top">
+            <div className="event-index-datetime">
+              <li className="date_time">{this.props.event.date_time}</li>
+            </div>
           </div>
-          <div className="address-div">
-            <p className="event-address">{this.props.event.address}</p>
-          </div>
-        </div>
+          <div className="event-index-bottom">
+            <div className="event-index-main-title">
+              <li className="dashboard-title">{event.title}</li>
+              <li className="address">Address: {event.address}</li>
+            </div>
 
-        <div className="join-leave-div">
-          { this.joinEventButton() }
+            {this.props.currentUser ?
+              (this.props.eventsAttending.includes(event.id) ?
+              <div className="join-unjoin-button">
+                <button onClick={this.handleDeleteAttendance.bind(this, event.id)}>Unjoin</button>
+              </div> :
+              <div className="join-unjoin-button">
+                <button onClick={this.handleAddAttendance.bind(this, event.id)}>Join</button>
+              </div> ) :
+              <Link className="join-unjoin-button" to='/sign-up'>Sign In to Join</Link>
+            }
+          </div>
         </div>
-      </div>
+      </ul>
+    ));
+
+    return (
+      (this.props.city) ?
+      <div className="event-index-main-container">
+        <div className="event-nav-links">
+          <Link to={`/cities/${city.id}/new-event-form`}>Create New Event</Link>
+        </div>
+        <div className="event-index-container">
+          {eventList}
+        </div>
+      </div> : <div></div>
     );
   }
 }
