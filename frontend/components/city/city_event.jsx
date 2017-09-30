@@ -31,34 +31,34 @@ class CityEvent extends React.Component {
     const { city } = this.props;
     const currentUser = this.props;
     console.log(this.props.city);
-    const eventList = city.events.map(event => (
+    const eventList = (this.props.city) ? city.events.map(event => (
       <ul key={event.id} className="event-index">
-        <div className="event-index-card">
-          <div className="event-index-top">
+        <div className="event-card">
+          <div className="event-top">
             <div className="event-index-datetime">
               <li className="date_time">{this.props.event.date_time}</li>
             </div>
           </div>
-          <div className="event-index-bottom">
-            <div className="event-index-main-title">
-              <li className="dashboard-title">{event.title}</li>
+          <div className="event-bottom">
+            <div className="event-address">
               <li className="address">Address: {event.address}</li>
             </div>
 
             {this.props.currentUser ?
               (this.props.eventsAttending.includes(event.id) ?
-              <div className="join-unjoin-button">
-                <button onClick={this.handleDeleteAttendance.bind(this, event.id)}>Unjoin</button>
+              <div className="join-leave-button">
+                <button onClick={this.handleLeave.bind(this, event.id)}>leave</button>
               </div> :
-              <div className="join-unjoin-button">
-                <button onClick={this.handleAddAttendance.bind(this, event.id)}>Join</button>
+              <div className="join-leave-button">
+                <button onClick={this.handleJoin.bind(this, event.id)}>join</button>
               </div> ) :
-              <Link className="join-unjoin-button" to='/sign-up'>Sign In to Join</Link>
+              <Link className="join-leave-button" to='/sign-up'>Sign In to join</Link>
             }
           </div>
         </div>
       </ul>
-    ));
+    )) :
+    <div></div>;
 
     return (
       (this.props.city) ?
