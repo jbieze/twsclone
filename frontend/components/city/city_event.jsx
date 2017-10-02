@@ -66,19 +66,27 @@ class CityEvent extends React.Component {
   }
 
   render() {
+    let date = new Date(this.props.event.date_time);
+    let weekday = date.toDateString().slice(0, 3);
+    let calendarDay = date.toDateString().slice(4, 10);
+    let time = date.toTimeString().slice(0, 5);
+    console.log(date);
+    console.log(date.toTimeString().slice(0, 5));
     return (
       <div key={this.props.event.id} className="city-event-container">
         <div className="city-event-info">
           <div className="event-detail">
-            <p className="event-location">{this.props.event.location}</p>
-            <p className="event-datetime">{this.props.event.date_time}</p>
+            <p className="event-date">{calendarDay}</p>
+            <p className="event-day">{weekday}</p>
+            <p className="event-time">{time}</p>
+            <hr></hr>
           </div>
           <div className="address-div">
             <p className="event-address">{this.props.event.address}</p>
           </div>
-        </div>
-        <div className="join-event-button">
-          {this.joinEventButton()}
+          <div className="join-event-button">
+            {this.joinEventButton()}
+          </div>
         </div>
       </div>
     );
