@@ -1,15 +1,17 @@
-export const createJoin = join => (
-  $.ajax({
-    method: 'POST',
-    url: 'api/joins',
-    data: { join }
-  })
-);
+export const createJoin = join => {
+  return (
+    $.ajax({
+      method: 'POST',
+      url: 'api/joins',
+      data: { join }
+    })
+  );
+};
 
-export const deleteJoin = id => (
+export const deleteJoin = eventId => (
   $.ajax({
     method: 'DELETE',
-    url: `api/joins/${id}`
+    url: `api/joins/${eventId}`
   })
 );
 

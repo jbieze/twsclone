@@ -9,9 +9,9 @@ export const receiveJoin = join => ({
   join
 });
 
-export const removeJoin = id => ({
+export const removeJoin = join => ({
   type: REMOVE_JOIN,
-  id
+  join
 });
 
 export const receiveJoins = () => ({

@@ -22,12 +22,12 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  has_many :joins,
+  has_many :joined_events,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Join
 
-  has_many :joined_events, through: :joins
+  # has_many :joined_events, through: :joins
 
   has_many :hosted_events,
     primary_key: :id,

@@ -8,9 +8,15 @@ Rails.application.routes.draw do
     end
     resources :events, only: [ :show, :update, :destroy]
     resources :joins, only: [:create, :destroy, :show]
+    # resources :users, only: [:index] do
+    #   resources :events, only: [:index] do
+    #     resources :joins, only: [:destroy]
+    #   end
+    # end
   end
 
   get 'events/user_events', :to => 'events#user_events'
+  delete 'api/joins/:event_id', :to => 'joins#destroy'
 
   root "static_pages#root"
 end
